@@ -1,0 +1,6 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+export default function SiteFooter() {
+ const linkedin = process.env.NEXT_PUBLIC_LINKEDIN_URL; const instagram = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
+ return <footer className="site-footer"><div className="footer-upper"><span className="eyebrow"><span className="signal-dot"/> OPEN TO NEW STORIES</span><h2>HAVE A STORY<br/><em>IN MIND?</em></h2><Link href="/contact" className="footer-contact-link">LET&apos;S MAKE SOMETHING <ArrowUpRight size={28}/></Link></div><div className="footer-lower"><div className="footer-identity"><span className="brand-monogram">F<span className="accent">.</span>B</span><p>FILMMAKER. CINEMATOGRAPHER. STORYTELLER.</p></div><nav aria-label="Footer navigation"><Link href="/work">WORK</Link><Link href="/stills">STILLS</Link><Link href="/about">ABOUT</Link><Link href="/contact">CONTACT</Link>{linkedin&&<a href={linkedin} target="_blank" rel="noreferrer">LINKEDIN ↗</a>}{instagram&&<a href={instagram} target="_blank" rel="noreferrer">INSTAGRAM ↗</a>}</nav><div className="footer-bottom"><span>© {new Date().getFullYear()} FANTAHUN BELACHEW</span><span>BUILT FOR STORIES WORTH TELLING.</span><a href="#main-content" className="back-top">BACK TO TOP ↑</a></div></div></footer>;
+}
